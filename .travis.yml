@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  - docker build -t labsome/frontend-builder:v$TRAVIS_BUILD_NUMBER .
+  - docker push labsome/frontend-builder:v$TRAVIS_BUILD_NUMBER
