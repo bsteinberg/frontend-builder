@@ -1,6 +1,6 @@
 FROM node:5
 
-COPY package.json /root
+COPY . /root
 
 RUN cd /root && npm install --global
 
